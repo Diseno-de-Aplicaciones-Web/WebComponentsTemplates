@@ -4,7 +4,7 @@ const users = [
     ["Sandrita", "No por mucho madrugar los clavos te caen del cielo"]
 ]
 
-class UserData extends HTMLElement {
+customElements.define('user-data', class UserData extends HTMLElement {
     constructor() {
       super();
       let template = document.querySelector('#user');
@@ -12,9 +12,7 @@ class UserData extends HTMLElement {
       const shadowRoot = this.attachShadow({mode: 'open'})
         .appendChild(templateContent.cloneNode(true));
   }
-}
-
-customElements.define('user-data', UserData)
+})
 
 const container = document.querySelector("#mainContainer")
 
