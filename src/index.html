@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/templateToElement.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Template test</h1>
+    </header>
+    <main>
+        <h2>Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="productsWrapper">
+                <!-- Populate with products -->
+            </tbody>
+        </table>
+    </main>
+    <template id="productRow">
+        <tr>
+            <td><slot name="description">Product description</slot></td>
+            <td><slot name="stock">Product stock</slot></td>
+            <td><slot name="price">Product price</slot></td>
+        </tr>
+    </template>
+    <script src="./js/index.js"></script>
+</body>
+</html>
