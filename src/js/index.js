@@ -19,14 +19,10 @@ customElements.define('user-data', UserData)
 const container = document.querySelector("#mainContainer")
 
 for (let item of users) {
-    const user = document.createElement('user-data');
-    const userName = document.createElement('span');
-    const status = document.createElement('span');
-    userName.innerText = item[0];
-    userName.setAttribute("slot","userName");
-    status.innerText = item[1];
-    status.setAttribute("slot","status");
-    user.appendChild(userName)
-    user.appendChild(status)
+    const user = document.createElement("user-data");
+    user.innerHTML = `
+      <span slot="userName">${item[0]}</span>
+      <span slot="status">${item[1]}</span>
+    `
     container.appendChild(user)
 }
